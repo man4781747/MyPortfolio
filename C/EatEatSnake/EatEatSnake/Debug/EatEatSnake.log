@@ -1,0 +1,7 @@
+﻿  EatEatSnake.cpp
+f:\githubdata\myportfolio\c\eateatsnake\eateatsnake\eateatsnake.cpp(17): warning C4838: 從 'int' 到 'SHORT' 的轉換必須是縮小轉換
+f:\githubdata\myportfolio\c\eateatsnake\eateatsnake\eateatsnake.cpp(107): warning C4554: '&': 檢查運算子優先順序找出可能發生的錯誤; 使用括號釐清順序
+f:\githubdata\myportfolio\c\eateatsnake\eateatsnake\eateatsnake.cpp(23): warning C4101: 'k': 未參考的區域變數
+f:\githubdata\myportfolio\c\eateatsnake\eateatsnake\eateatsnake.cpp(25): warning C4101: 'ch': 未參考的區域變數
+f:\githubdata\myportfolio\c\eateatsnake\eateatsnake\eateatsnake.cpp(53): warning C4101: 'ch': 未參考的區域變數
+  EatEatSnake.vcxproj -> F:\GitHubData\MyPortfolio\C\EatEatSnake\Debug\EatEatSnake.exe
