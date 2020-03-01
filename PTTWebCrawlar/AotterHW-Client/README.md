@@ -14,5 +14,10 @@
                  方便用戶追蹤
 
 架設方法
-cd 至該資料夾下後 輸入: docker-compose up 即可
+cd 至該資料夾下後 輸入: 
+
+docker-compose up
+
+即可
+
 或執行 python RunThis.py
