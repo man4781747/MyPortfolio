@@ -1,0 +1,7 @@
+version: '3.1'
+
+services:
+  WebCrawler:
+    image: pttboardnameupdate
+    build: .
+    command: python PttBoardNameUpdate.py

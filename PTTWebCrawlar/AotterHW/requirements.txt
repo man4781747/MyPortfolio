@@ -1,0 +1,7 @@
+Django>=2.0,<3.0
+requests
+beautifulsoup4
+pymongo
+django-cors-headers
+channels
+channels_redis
