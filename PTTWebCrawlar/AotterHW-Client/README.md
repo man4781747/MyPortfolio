@@ -6,14 +6,21 @@
 
 
 執行前 請先至 config.txt 中更改各項設定
+
   ServerIP: 伺服器IP位置
+  
   UpperTime: 搜尋文章的時間區間上界
+  
   LowerTime:  搜尋文章的時間區間下界
+  
   TestMode: 使否用測試模式
+  
   WebSocketName: 替此庫戶端命名 此名稱可在  " "IP網址":8081/WedCrawler/GetNowAllWebCrawler/ "  中看到
                  方便用戶追蹤
 
+
 架設方法
+
 cd 至該資料夾下後 輸入: 
 
 docker-compose up
