@@ -1,0 +1,194 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+	<div id="app">
+		<!-- 猜炸彈總數螢幕 -->
+		<div id="TotalBombCount_base_body">
+			<div id="TotalBombCount_base_top">
+				<div class="TotalBombCount_base_hole">
+					<div class="TotalBombCount_hole_top">
+						<div class="Num_v" 
+:style="[0,2,3,5,6,7,8,9].indexOf(BombCountTens)!=-1?'top:10%;background-color : #DD0000;':'top:15%;'"
+						>
+						</div>
+						<div class="Num_v"
+:style="[2,3,4,5,6,8,9].indexOf(BombCountTens)!=-1?'top:30%;background-color : #DD0000;':'top:35%;'"
+						></div>
+						<div class="Num_v"
+:style="[0,2,3,5,6,8,9].indexOf(BombCountTens)!=-1?'top:60%;background-color : #DD0000;':'top:60%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,4,5,6,7,8,9].indexOf(BombCountTens)!=-1?'top:-10%;left:5%;background-color : #DD0000;':'top:-5%;left:5%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,2,6,8].indexOf(BombCountTens)!=-1?'top:-7%;left:5%;background-color : #DD0000;':'top:0%;left:5%;'"
+						></div>
+						<div class="Num_h" 
+:style="[0,1,2,3,4,7,8,9].indexOf(BombCountTens)!=-1?'top:-65%;left:85%;background-color : #DD0000;':'top:-65%;left:85%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,1,3,4,5,6,7,8,9].indexOf(BombCountTens)!=-1?'top:-60%;left:85%;background-color : #DD0000;':'top:-60%;left:85%;'"
+						></div>
+					</div>
+				</div>
+				<div class="TotalBombCount_base_hole">
+					<div class="TotalBombCount_hole_top">
+						<div class="Num_v" 
+:style="[0,2,3,5,6,7,8,9].indexOf(BombCountDigits)!=-1?'top:10%;background-color : #DD0000;':'top:15%;'"
+						>
+						</div>
+						<div class="Num_v"
+:style="[2,3,4,5,6,8,9].indexOf(BombCountDigits)!=-1?'top:30%;background-color : #DD0000;':'top:35%;'"
+						></div>
+						<div class="Num_v"
+:style="[0,2,3,5,6,8,9].indexOf(BombCountDigits)!=-1?'top:60%;background-color : #DD0000;':'top:60%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,4,5,6,7,8,9].indexOf(BombCountDigits)!=-1?'top:-10%;left:5%;background-color : #DD0000;':'top:-5%;left:5%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,2,6,8].indexOf(BombCountDigits)!=-1?'top:-7%;left:5%;background-color : #DD0000;':'top:0%;left:5%;'"
+						></div>
+						<div class="Num_h" 
+:style="[0,1,2,3,4,7,8,9].indexOf(BombCountDigits)!=-1?'top:-65%;left:85%;background-color : #DD0000;':'top:-65%;left:85%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,1,3,4,5,6,7,8,9].indexOf(BombCountDigits)!=-1?'top:-60%;left:85%;background-color : #DD0000;':'top:-60%;left:85%;'"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="BombNumCtrl_base_body">
+			<div id="BombNumCtrl_base_top">
+				<div class="BombNumCtrl_base_hole">
+					<div class="BombNumCtrl_body">
+						<div class="BombNumCtrl_top" @click="BombNumChange(1)">
+							▲
+						</div>
+					</div>
+				</div>
+				<div class="BombNumCtrl_base_hole">
+					<div class="BombNumCtrl_body">
+						<div class="BombNumCtrl_top" @click="BombNumChange(-1)">
+							▼
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 猜測數字螢幕 -->
+		<div id="GuestBombCount_base_body">
+			<div id="GuestBombCount_base_top">
+				<div class="TotalBombCount_base_hole">
+					<div class="TotalBombCount_hole_top">
+						<div class="Num_v" 
+:style="[0,2,3,5,6,7,8,9].indexOf(BombGuestTens)!=-1?'top:10%;background-color : #DD0000;':'top:15%;'"
+						>
+						</div>
+						<div class="Num_v"
+:style="[2,3,4,5,6,8,9].indexOf(BombGuestTens)!=-1?'top:30%;background-color : #DD0000;':'top:35%;'"
+						></div>
+						<div class="Num_v"
+:style="[0,2,3,5,6,8,9].indexOf(BombGuestTens)!=-1?'top:60%;background-color : #DD0000;':'top:60%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,4,5,6,7,8,9].indexOf(BombGuestTens)!=-1?'top:-10%;left:5%;background-color : #DD0000;':'top:-5%;left:5%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,2,6,8].indexOf(BombGuestTens)!=-1?'top:-7%;left:5%;background-color : #DD0000;':'top:0%;left:5%;'"
+						></div>
+						<div class="Num_h" 
+:style="[0,1,2,3,4,7,8,9].indexOf(BombGuestTens)!=-1?'top:-65%;left:85%;background-color : #DD0000;':'top:-65%;left:85%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,1,3,4,5,6,7,8,9].indexOf(BombGuestTens)!=-1?'top:-60%;left:85%;background-color : #DD0000;':'top:-60%;left:85%;'"
+						></div>
+					</div>
+				</div>
+				<div class="TotalBombCount_base_hole">
+					<div class="TotalBombCount_hole_top">
+						<div class="Num_v" 
+:style="[0,2,3,5,6,7,8,9].indexOf(BombGuestDigits)!=-1?'top:10%;background-color : #DD0000;':'top:15%;'"
+						>
+						</div>
+						<div class="Num_v"
+:style="[2,3,4,5,6,8,9].indexOf(BombGuestDigits)!=-1?'top:30%;background-color : #DD0000;':'top:35%;'"
+						></div>
+						<div class="Num_v"
+:style="[0,2,3,5,6,8,9].indexOf(BombGuestDigits)!=-1?'top:60%;background-color : #DD0000;':'top:60%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,4,5,6,7,8,9].indexOf(BombGuestDigits)!=-1?'top:-10%;left:5%;background-color : #DD0000;':'top:-5%;left:5%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,2,6,8].indexOf(BombGuestDigits)!=-1?'top:-7%;left:5%;background-color : #DD0000;':'top:0%;left:5%;'"
+						></div>
+						<div class="Num_h" 
+:style="[0,1,2,3,4,7,8,9].indexOf(BombGuestDigits)!=-1?'top:-65%;left:85%;background-color : #DD0000;':'top:-65%;left:85%;'"
+						></div>
+						<div class="Num_h"
+:style="[0,1,3,4,5,6,7,8,9].indexOf(BombGuestDigits)!=-1?'top:-60%;left:85%;background-color : #DD0000;':'top:-60%;left:85%;'"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="ResetButton_base_body">
+			<div id="ResetButton_base_top">
+				<div id="ResetButton_base_hole">
+					<div id="ResetButton_body"
+:style="'background-color:'+ResetButton.buttom_body_background_color+';'+'height:'+ResetButton.buttom_body_height+'vmin;'+'transform:translateY('+ResetButton.buttom_body_translateY+'vmin);'"
+					>
+						<div id="ResetButton_top"
+:style="'color:'+ResetButton.buttom_top_font_color+';'+'background-color:'+ResetButton.buttom_top_background_color+';'+'border-color:'+ResetButton.buttom_top_border_color+';'"
+						@click="ResetButtonClick()"
+						@mouseleave="ButtomMouseLeave(ResetButton)"
+						@mousedown="ButtomMouseDown(ResetButton)"
+						@mouseup="ButtomMouseUp(ResetButton)"
+						>
+							{{ResetButton.text}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<template v-for="(buttomData, index) in BoxList">
+			<div class="button_base_body" :style="'top:'+buttomData.top+'vmin;left:'+buttomData.left+'vmin;'">
+				<div class="button_base_top">
+					<div class="button_base_top_hole">
+						<div class='botton_body'
+:style="'background-color:'+buttomData.buttom_body_background_color+';'+'height:'+buttomData.buttom_body_height+'vmin;'+'transform:translateY('+buttomData.buttom_body_translateY+'vmin);'"
+						>
+							<div class='botton_top' 
+:style="'color:'+buttomData.buttom_top_font_color+';'+'background-color:'+buttomData.buttom_top_background_color+';'+'border-color:'+buttomData.buttom_top_border_color+';'"
+								@click="ButtomClicked(buttomData, true)"
+								@mouseover="ButtomMouseOver(buttomData)"
+								@mouseleave="ButtomMouseLeave(buttomData)"
+								@click.right.prevent="ButtomClicked(buttomData, false)"
+								@mousedown="ButtomMouseDown(buttomData)"
+								@mouseup="ButtomMouseUp(buttomData)"
+							>
+								{{buttomData.text}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		
+	</div>
+	
+</body>
+<script src="MainVueJs.js"></script>
+</html>
